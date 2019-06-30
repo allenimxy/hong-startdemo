@@ -1,6 +1,8 @@
 package com.hong.startdemo.utils;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -17,13 +19,15 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtils {
 
     private static final long EXPIRE_TIME = 1800;
+
     private RedisTemplate<String, Object> redisTemplate;
 
     public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
-    // =============================common============================
+
+
 
     /**
      * 分布式缓存锁
